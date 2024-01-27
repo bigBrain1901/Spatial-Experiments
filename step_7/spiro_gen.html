@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <p style="margin-top: 30px;">Check Console Logs to find a copy-able string of coordinates.</p>
+    <canvas id="canvas" width="500" height="500"></canvas>
+</body>
+
+<script>
+    var canvas = document.getElementById('canvas');
+    var ctx = canvas.getContext('2d');
+    var tx = -118.28540388784175, ty = 34.02075750694575;
+
+    var R = 36, r = 9, a = 30;
+
+    var x0 = R + r - a, y0 = 0;
+    ctx.moveTo(200 + x0*2, 200 + y0*2);
+    var arr = [];
+
+    var cos = Math.cos, sin = Math.sin, pi = Math.PI, nRev = 8;
+    for (var t = 0.0; t < (pi * nRev); t += 0.05) {
+        var x = (R + r) * cos((r / R) * t) - a * cos((1 + r / R) * t);
+        var y = (R + r) * sin((r / R) * t) - a * sin((1 + r / R) * t);
+        ctx.lineTo(200 + x*2, 200 + y*2);
+        arr.push([tx + x / 100000, ty + y / 100000])
+    }
+    let s = ""
+    arr.forEach((a) => {
+        s = s + a[0] + ',' + a[1] + '\n';
+    });
+    console.log(s)
+
+    ctx.stroke();
+</script>
+
+</html>

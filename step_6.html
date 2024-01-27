@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>OL</title>
+    <script src="https://cdn.jsdelivr.net/npm/ol@v7.1.0/dist/ol.js"></script>
+
+    <style>
+        #map {
+            width: 100%;
+            height: 98vh;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="map"></div>
+
+    <script>
+        let latd=34.0205363, long=-118.28538;
+        var d = {
+            "Home": { "lat": 34.0325022, "lng": -118.2820358 },
+            "Library for International and Public Affairs": { "lat": 34.021212, "lng": -118.2836744 },
+            "Leavey Library": { "lat": 34.0215009, "lng": -118.2830803 },
+            "Edward Doheny Jr Memorial Library": { "lat": 34.0204552, "lng": -118.2841838 },
+            "Prentiss Memorial Fountain": { "lat": 34.0206175, "lng": -118.2842202 },
+            "Generations Fountain": { "lat": 34.0220509, "lng": -118.28325329999998 },
+            "Exposition Park Fountain": { "lat": 34.0173607, "lng": -118.28617909999998 },
+            "Moreton Fig": { "lat": 34.0198434, "lng": -118.285959 },
+            "Panda Express": { "lat": 34.0202816, "lng": -118.2859152 },
+            "Parkside Restaurant": { "lat": 34.0188652, "lng": -118.2910767 },
+            "Department of Public Safety": { "lat": 34.0209376, "lng": -118.28964109999998 },
+            "Ethel Percy Andrus Gerontology Center": { "lat": 34.0203924, "lng": -118.2937717 },
+            "Hughes Aircraft Electrical Engineering Center": { "lat": 34.0197308, "lng": -118.290105 }
+        };
+
+        localStorage.setItem("myData", JSON.stringify(d));
+        var dataStored = JSON.parse(localStorage.getItem("myData"));
+        console.log(dataStored);
+
+        var map;
+        function initMap() {
+            map = new ol.Map({
+                target: 'map',
+                layers: [
+                    new ol.layer.Tile({
+                        source: new ol.source.OSM()
+                    })
+                ],
+                view: new ol.View({
+                    center: ol.proj.fromLonLat([long, latd]),
+                    zoom: 18,
+                    maxZoom: 18
+                })
+            });
+        }
+
+        function addMarker(lat, lon, name) {
+            var labelStyle = new ol.style.Style({
+                text: new ol.style.Text({
+                    font: '15px Calibri,sans-serif',
+                    overflow: true,
+                    fill: new ol.style.Fill({
+                        color: '#fff'
+                    }),
+                    stroke: new ol.style.Stroke({
+                        color: '#127F45',
+                        width: 10
+                    }),
+                    offsetY: -59
+                })
+            });
+            var iconStyle = new ol.style.Style({
+                image: new ol.style.Icon({
+                    anchor: [0.5, 46],
+                    anchorXUnits: 'fraction',
+                    anchorYUnits: 'pixels',
+                    src: 'https://openlayers.org/en/latest/examples/data/icon.png'
+                })
+            });
+
+            var style = [iconStyle, labelStyle];
+            var layer = new ol.layer.Vector({
+                style: function (feature) {
+                    labelStyle.getText().setText(feature.get('name'));
+                    return style;
+                },
+                source: new ol.source.Vector({
+                    features: [
+                        new ol.Feature({
+                            geometry: new ol.geom.Point(ol.proj.fromLonLat([lon, lat])),
+                            name: name
+                        })
+                    ]
+                })
+            });
+            map.addLayer(layer);
+        }
+
+        initMap();
+        Object.entries(dataStored).forEach(([k, v]) => {
+            addMarker(v.lat, v.lng, k)
+        })
+    </script>
+
+</body>
+</html>

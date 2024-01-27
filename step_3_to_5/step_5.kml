@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.0">
+    <Document>
+        <Style id="my_style">
+            <IconStyle>
+                <color>ff2f2fd3</color>
+                <scale>1.5</scale>
+                <Icon>
+                    <href>https://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+                </Icon>
+            </IconStyle>
+            <LabelStyle>
+                <scale>1</scale>
+            </LabelStyle>
+            <LineStyle>
+                <width>2</width>
+                <color>ff0000ff</color>
+            </LineStyle>
+        </Style>
+        <Style id="my_style1">
+            <LineStyle>
+                <width>1</width>
+            </LineStyle>
+            <PolyStyle>
+                <color>7700B7FF</color>
+            </PolyStyle>
+        </Style>
+        <Folder>
+            <name>Overlays - 4 Nearest Neighbors</name>
+            <Placemark>
+                <name>1164 arc-deg</name>
+                <styleUrl>#my_style</styleUrl>
+                <LineString>
+                    <extrude>1</extrude>
+                    <altitudeMode>relativeToGround</altitudeMode>
+                    <coordinates>
+                        -118.2820358,34.0325022,50
+                        -118.2832533,34.0220509,50
+                    </coordinates>
+                </LineString>
+            </Placemark>
+            <Placemark>
+                <name>1224 arc-deg</name>
+                <styleUrl>#my_style</styleUrl>
+                <LineString>
+                    <extrude>1</extrude>
+                    <altitudeMode>relativeToGround</altitudeMode>
+                    <coordinates>
+                        -118.2820358,34.0325022,50
+                        -118.2830803,34.0215009,50
+                    </coordinates>
+                </LineString>
+            </Placemark>
+            <Placemark>
+                <name>1261 arc-deg</name>
+                <styleUrl>#my_style</styleUrl>
+                <LineString>
+                    <extrude>1</extrude>
+                    <altitudeMode>relativeToGround</altitudeMode>
+                    <coordinates>
+                        -118.2820358,34.0325022,50
+                        -118.2836744,34.021212,50
+                    </coordinates>
+                </LineString>
+            </Placemark>
+            <Placemark>
+                <name>1333 arc-deg</name>
+                <styleUrl>#my_style</styleUrl>
+                <LineString>
+                    <extrude>1</extrude>
+                    <altitudeMode>relativeToGround</altitudeMode>
+                    <coordinates>
+                        -118.2820358,34.0325022,50
+                        -118.2842202,34.0206175,50
+                    </coordinates>
+                </LineString>
+            </Placemark>
+        </Folder>
+        <Folder>
+            <name>Overlays - Convex Hull</name>
+            <Placemark>
+                <name>Convex Hull</name>
+                <styleUrl>#my_style1</styleUrl>
+                <Polygon>
+                    <extrude>1</extrude>
+                    <altitudeMode>relativeToGround</altitudeMode>
+                    <outerBoundaryIs>
+                        <LinearRing>
+                            <coordinates>
+                                -118.2861791,34.0173607,20
+                                -118.2910767,34.0188652,20
+                                -118.2937717,34.0203924,20
+                                -118.2820358,34.0325022,20
+                                -118.2830803,34.0215009,20
+                                -118.2861791,34.0173607,20
+                            </coordinates>
+                        </LinearRing>
+                    </outerBoundaryIs>
+                </Polygon>
+            </Placemark>
+        </Folder>
+        <Folder>
+            <name>Home</name>
+            <Placemark>
+                <name>Home</name>
+                <styleUrl>#my_style</styleUrl>
+                <Point>
+                    <coordinates>-118.2820358,34.0325022</coordinates>
+                </Point>
+            </Placemark>
+        </Folder>
+        <Folder>
+            <name>Libraries</name>
+            <Placemark>
+                <name>Library for International and Public Affairs</name>
+                <styleUrl>#my_style</styleUrl>
+                <Point>
+                    <coordinates>-118.2836744,34.021212</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark>
+                <name>Leavey Library</name>
+                <styleUrl>#my_style</styleUrl>
+                <Point>
+                    <coordinates>-118.2830803,34.0215009</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark>
+                <name>Edward Doheny Jr Memorial Library</name>
+                <styleUrl>#my_style</styleUrl>
+                <Point>
+                    <coordinates>-118.2841838,34.0204552</coordinates>
+                </Point>
+            </Placemark>
+        </Folder>
+        <Folder>
+            <name>Waterworks</name>
+            <Placemark>
+                <name>Prentiss Memorial Fountain</name>
+                <styleUrl>#my_style</styleUrl>
+                <Point>
+                    <coordinates>-118.2842202,34.0206175</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark>
+                <name>Generations Fountain</name>
+                <styleUrl>#my_style</styleUrl>
+                <Point>
+                    <coordinates>-118.28325329999998,34.0220509</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark>
+                <name>Exposition Park Fountain</name>
+                <styleUrl>#my_style</styleUrl>
+                <Point>
+                    <coordinates>-118.28617909999998,34.0173607</coordinates>
+                </Point>
+            </Placemark>
+        </Folder>
+        <Folder>
+            <name>Eateries</name>
+            <Placemark>
+                <name>Moreton Fig</name>
+                <styleUrl>#my_style</styleUrl>
+                <Point>
+                    <coordinates>-118.285959,34.0198434</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark>
+                <name>Panda Express</name>
+                <styleUrl>#my_style</styleUrl>
+                <Point>
+                    <coordinates>-118.2859152,34.0202816</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark>
+                <name>Parkside Restaurant</name>
+                <styleUrl>#my_style</styleUrl>
+                <Point>
+                    <coordinates>-118.2910767,34.0188652</coordinates>
+                </Point>
+            </Placemark>
+        </Folder>
+        <Folder>
+            <name>Departments</name>
+            <Placemark>
+                <name>Department of Public Safety</name>
+                <styleUrl>#my_style</styleUrl>
+                <Point>
+                    <coordinates>-118.28964109999998,34.0209376</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark>
+                <name>Ethel Percy Andrus Gerontology Center</name>
+                <styleUrl>#my_style</styleUrl>
+                <Point>
+                    <coordinates>-118.2937717,34.0203924</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark>
+                <name>Hughes Aircraft Electrical Engineering Center</name>
+                <styleUrl>#my_style</styleUrl>
+                <Point>
+                    <coordinates>-118.290105,34.0197308</coordinates>
+                </Point>
+            </Placemark>
+        </Folder>
+    </Document>
+</kml>
